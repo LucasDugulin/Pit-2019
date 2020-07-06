@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>PhotoFlash</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!--Style Barra Busca-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+    <link href="css/searchbar.css" rel="stylesheet" />
+
+    <!--JS Barra Busca-->
+    <style>
+        .autocomplete-items {
+            /* margin-left: 215px; */
+            width: 260px;
+            position: absolute;
+            border: 1px solid #d4d4d4;
+            border-bottom: none;
+            border-top: none;
+            z-index: 99;
+            /*position the autocomplete items to be the same width as the container:*/
+            top: 55%;
+            left: 19%;
+            right: 0;
+        }
+
+        .autocomplete-items div {
+            padding: 10px;
+            cursor: pointer;
+            background-color: #fff;
+            border-bottom: 1px solid #d4d4d4;
+        }
+
+        /*when hovering an item:*/
+        .autocomplete-items div:hover {
+            background-color: #e9e9e9;
+        }
+
+        /*when navigating through the items using the arrow keys:*/
+        .autocomplete-active {
+            background-color: #50c058 !important;
+            color: #ffffff;
+        }
+    </style>
+
+
+
+</head>
+
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+    <div class="site-wrap">
+
+        <div class="site-mobile-menu site-navbar-target">
+            <div class="site-mobile-menu-header">
+                <div class="site-mobile-menu-close mt-3">
+                    <span class="icon-close2 js-menu-toggle"></span>
+                </div>
+            </div>
+            <div class="site-mobile-menu-body"></div>
+        </div>
+
+        <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
+
+            <div class="container-fluid">
+                <div class="d-flex align-items-center">
+                    <div class="site-logo mr-auto w-25"><a href="index.html">PhotoFlash</a></div>
+
+                    <div class="mx-auto text-center">
+                        <nav class="site-navigation position-relative text-right" role="navigation">
+                            <ul class="site-menu main-menu js-clone-nav mx-auto d-none d-lg-block  m-0 p-0">
+                                <li><a href="#home-section" class="nav-link">Home</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div class="ml-auto w-25">
+                        <nav class="site-navigation position-relative text-right" role="navigation">
+                            <ul
+                                class="site-menu main-menu site-menu-dark js-clone-nav mr-auto d-none d-lg-block m-0 p-0">
+                            </ul>
+                        </nav>
+                        <a href="./index-perfil.html" class="btn btn-primary py-3 px-5 btn-pill">Perfil</a>
+                    </div>
+                </div>
+            </div>
+
+        </header>
+
+        <div class="intro-section" id="home-section">
+
+            <div class="slide-1" style="background-image: url('images/hero_1.jpg');"
+                data-stellar-background-ratio="0.5">
+                <div class="container" style="margin-left: 30%">
+                    <div class="row align-items-center">
+                        <div class="col-12">
+                            <div class="row align-items-center">
+                                <!---->
+                                <div class="s003">
+                                    <form>
+                                        <div class="inner-form">
+                                            <div class="input-field first-wrap">
+                                                <select data-trigger="" name="choices-single-defaul">
+                                                    <option placeholder="">Categoria</option>
+                                                    <option>Casamentos</option>
+                                                    <option>Debutante</option>
+                                                    <option>Festas</option>
+                                                    <option>PET</option>
+                                                    <option>Ensaios</option>
+                                                </select>
+                                            </div>
+                                            <div class="input-field second-wrap">
+                                                <input id="myInput" type="text" placeholder="O que você precisa?" />
+                                            </div>
+                                            <div class="input-field third-wrap">
+                                                <button class="btn-search" type="button">
+                                                    <svg class="svg-inline--fa fa-search fa-w-16" aria-hidden="true"
+                                                        data-prefix="fas" data-icon="search" role="img"
+                                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                        <path fill="currentColor"
+                                                            d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z">
+                                                        </path>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <script src="js/extention/choices.js"></script>
+                                <script>
+                                    const choices = new Choices('[data-trigger]',
+                                        {
+                                            searchEnabled: false,
+                                            itemSelectText: '',
+                                        });
+
+                                </script>
+                                <script>
+                                    function autocomplete(inp, arr) {
+                                        /*the autocomplete function takes two arguments,
+                                        the text field element and an array of possible autocompleted values:*/
+                                        var currentFocus;
+                                        /*execute a function when someone writes in the text field:*/
+                                        inp.addEventListener("input", function (e) {
+                                            var a, b, i, val = this.value;
+                                            /*close any already open lists of autocompleted values*/
+                                            closeAllLists();
+                                            if (!val) { return false; }
+                                            currentFocus = -1;
+                                            /*create a DIV element that will contain the items (values):*/
+                                            a = document.createElement("DIV");
+                                            a.setAttribute("id", this.id + "autocomplete-list");
+                                            a.setAttribute("class", "autocomplete-items");
+                                            /*append the DIV element as a child of the autocomplete container:*/
+                                            this.parentNode.appendChild(a);
+                                            /*for each item in the array...*/
+                                            for (i = 0; i < arr.length; i++) {
+                                                /*check if the item starts with the same letters as the text field value:*/
+                                                if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+                                                    /*create a DIV element for each matching element:*/
+                                                    b = document.createElement("DIV");
+                                                    /*make the matching letters bold:*/
+                                                    b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+                                                    b.innerHTML += arr[i].substr(val.length);
+                                                    /*insert a input field that will hold the current array item's value:*/
+                                                    b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                                                    /*execute a function when someone clicks on the item value (DIV element):*/
+                                                    b.addEventListener("click", function (e) {
+                                                        /*insert the value for the autocomplete text field:*/
+                                                        inp.value = this.getElementsByTagName("input")[0].value;
+                                                        /*close the list of autocompleted values,
+                                                        (or any other open lists of autocompleted values:*/
+                                                        closeAllLists();
+                                                    });
+                                                    a.appendChild(b);
+                                                }
+                                            }
+                                        });
+                                        /*execute a function presses a key on the keyboard:*/
+                                        inp.addEventListener("keydown", function (e) {
+                                            var x = document.getElementById(this.id + "autocomplete-list");
+                                            if (x) x = x.getElementsByTagName("div");
+                                            if (e.keyCode == 40) {
+                                                /*If the arrow DOWN key is pressed,
+                                                increase the currentFocus variable:*/
+                                                currentFocus++;
+                                                /*and and make the current item more visible:*/
+                                                addActive(x);
+                                            } else if (e.keyCode == 38) { //up
+                                                /*If the arrow UP key is pressed,
+                                                decrease the currentFocus variable:*/
+                                                currentFocus--;
+                                                /*and and make the current item more visible:*/
+                                                addActive(x);
+                                            } else if (e.keyCode == 13) {
+                                                /*If the ENTER key is pressed, prevent the form from being submitted,*/
+                                                e.preventDefault();
+                                                if (currentFocus > -1) {
+                                                    /*and simulate a click on the "active" item:*/
+                                                    if (x) x[currentFocus].click();
+                                                }
+                                            }
+                                        });
+                                        function addActive(x) {
+                                            /*a function to classify an item as "active":*/
+                                            if (!x) return false;
+                                            /*start by removing the "active" class on all items:*/
+                                            removeActive(x);
+                                            if (currentFocus >= x.length) currentFocus = 0;
+                                            if (currentFocus < 0) currentFocus = (x.length - 1);
+                                            /*add class "autocomplete-active":*/
+                                            x[currentFocus].classList.add("autocomplete-active");
+                                        }
+                                        function removeActive(x) {
+                                            /*a function to remove the "active" class from all autocomplete items:*/
+                                            for (var i = 0; i < x.length; i++) {
+                                                x[i].classList.remove("autocomplete-active");
+                                            }
+                                        }
+                                        function closeAllLists(elmnt) {
+                                            /*close all autocomplete lists in the document,
+                                            except the one passed as an argument:*/
+                                            var x = document.getElementsByClassName("autocomplete-items");
+                                            for (var i = 0; i < x.length; i++) {
+                                                if (elmnt != x[i] && elmnt != inp) {
+                                                    x[i].parentNode.removeChild(x[i]);
+                                                }
+                                            }
+                                        }
+                                        /*execute a function when someone clicks in the document:*/
+                                        document.addEventListener("click", function (e) {
+                                            closeAllLists(e.target);
+                                        });
+                                    }
+
+                                    /*An array containing all the country names in the world:*/
+                                    var countries = ['Lucas', 'Rodrigo', 'João', 'Pedro', 'Nicolas', 'Sarah', 'Debora', 'Sophia', 'Marcos', 'Matheus', 'Roger', 'Júlia', 'Ana', 'Arthur'];
+
+                                    /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
+                                    autocomplete(document.getElementById("myInput"), countries);
+                                </script>
+                                <!---->
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="site-section courses-title" id="courses-section">
+            <div class="container">
+                <div class="row mb-5 justify-content-center">
+                    <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="">
+                        <h2 class="section-title">Destaques</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="site-section courses-entry-wrap" data-aos="fade-up" data-aos-delay="100">
+            <div class="container">
+                <div class="row">
+
+                    <div class="owl-carousel col-12 nonloop-block-14">
+
+                        <div class="course bg-white h-100 align-self-stretch">
+                            <figure class="m-0">
+                                <a href="course-single.html"><img src="images/WhatsApp 1.jpeg" alt="Image"
+                                        class="img-fluid"></a>
+                            </figure>
+                            <div class="course-inner-text py-4 px-4">
+                                <span class="course-price">$20</span>
+                                <div class="meta"><span class="icon-clock-o"></span>4 Conclusões / 12 Chamadas</div>
+                                <h3><a href="#">Casamentos</a></h3>
+                                <p>Breve Explicação.</p>
+                            </div>
+                            <div class="d-flex border-top stats">
+                                <div class="py-3 px-4"><span class="icon-users"></span> 2,193 students</div>
+                                <div class="py-3 px-4 w-25 ml-auto border-left"><span class="icon-chat"></span> 22</div>
+                            </div>
+                        </div>
+
+                        <div class="course bg-white h-100 align-self-stretch">
+                            <figure class="m-0">
+                                <a href="course-single.html"><img src="images/WhatsApp 2.jpeg" alt="Image"
+                                        class="img-fluid"></a>
+                            </figure>
+                            <div class="course-inner-text py-4 px-4">
+                                <span class="course-price">$99</span>
+                                <div class="meta"><span class="icon-clock-o"></span>3 Conclusões / 11 Chamadas</div>
+                                <h3><a href="#">Festas de 15 Anos</a></h3>
+                                <p>Breve Explicação.</p>
+                            </div>
+                            <div class="d-flex border-top stats">
+                                <div class="py-3 px-4"><span class="icon-users"></span> 2,193 students</div>
+                                <div class="py-3 px-4 w-25 ml-auto border-left"><span class="icon-chat"></span> 19</div>
+                            </div>
+                        </div>
+
+                        <div class="course bg-white h-100 align-self-stretch">
+                            <figure class="m-0">
+                                <a href="course-single.html"><img src="images/WhatsApp 3.jpeg" alt="Image"
+                                        class="img-fluid"></a>
+                            </figure>
+                            <div class="course-inner-text py-4 px-4">
+                                <span class="course-price">$99</span>
+                                <div class="meta"><span class="icon-clock-o"></span>6 Conclusões / 18 Chamadas</div>
+                                <h3><a href="#">Festas/Confraternizações</a></h3>
+                                <p>Breve Explicação.</p>
+                            </div>
+                            <div class="d-flex border-top stats">
+                                <div class="py-3 px-4"><span class="icon-users"></span> 2,193 students</div>
+                                <div class="py-3 px-4 w-25 ml-auto border-left"><span class="icon-chat"></span> 23</div>
+                            </div>
+                        </div>
+
+                        <div class="course bg-white h-100 align-self-stretch">
+                            <figure class="m-0">
+                                <a href="course-single.html"><img src="images/WhatsApp 4.jpeg" alt="Image"
+                                        class="img-fluid"></a>
+                            </figure>
+                            <div class="course-inner-text py-4 px-4">
+                                <span class="course-price">$20</span>
+                                <div class="meta"><span class="icon-clock-o"></span>10 Conclusões / 23 Chamadas</div>
+                                <h3><a href="#">Ensaio PET</a></h3>
+                                <p>Breve Explicação.</p>
+                            </div>
+                            <div class="d-flex border-top stats">
+                                <div class="py-3 px-4"><span class="icon-users"></span> 2,193 students</div>
+                                <div class="py-3 px-4 w-25 ml-auto border-left"><span class="icon-chat"></span> 29</div>
+                            </div>
+                        </div>
+
+                        <div class="course bg-white h-100 align-self-stretch">
+                            <figure class="m-0">
+                                <a href="course-single.html"><img src="images/WhatsApp 6.jpeg" alt="Image"
+                                        class="img-fluid"></a>
+                            </figure>
+                            <div class="course-inner-text py-4 px-4">
+                                <span class="course-price">$99</span>
+                                <div class="meta"><span class="icon-clock-o"></span>1 Conclusões / 5 Chamadas</div>
+                                <h3><a href="#">Ensasio Recem Nascido</a></h3>
+                                <p>Breve Explicação.</p>
+                            </div>
+                            <div class="d-flex border-top stats">
+                                <div class="py-3 px-4"><span class="icon-users"></span> 2,193 students</div>
+                                <div class="py-3 px-4 w-25 ml-auto border-left"><span class="icon-chat"></span> 13</div>
+                            </div>
+                        </div>
+
+                        <div class="course bg-white h-100 align-self-stretch">
+                            <figure class="m-0">
+                                <a href="course-single.html"><img src="images/WhatsApp 7.jpeg" alt="Image"
+                                        class="img-fluid"></a>
+                            </figure>
+                            <div class="course-inner-text py-4 px-4">
+                                <span class="course-price">$99</span>
+                                <div class="meta"><span class="icon-clock-o"></span>15 Conclusões / 27 Chamadas</div>
+                                <h3><a href="#">Ensaio Fotográfico</a></h3>
+                                <p>Breve Explicação.</p>
+                            </div>
+                            <div class="d-flex border-top stats">
+                                <div class="py-3 px-4"><span class="icon-users"></span> 2,193 students</div>
+                                <div class="py-3 px-4 w-25 ml-auto border-left"><span class="icon-chat"></span> 33</div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-7 text-center">
+                        <button class="customPrevBtn btn btn-primary m-1">Anterior</button>
+                        <button class="customNextBtn btn btn-primary m-1">Próximo</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="site-section" id="programs-section">
+            <div class="container">
+
+            </div>
+        </div>
+
+        <footer class="footer-section bg-white">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h3>Sobre PhotoFlash</h3>
+                        <p>Venha conhecer nossa plataforma e encontar os melhores fotógrafos para o que você precisa ou
+                            então venha ser um de nosso fotógrafos.</p>
+                    </div>
+
+                    <div class="col-md-3 text-center">
+                        <a href="#home-section" class="nav-link">Voltar Para Topo da Página</a>
+                    </div>
+
+                    <div class="col-md-4">
+                        <h3>Se inscreva</h3>
+                        <p></p>
+                        <form action="#" class="footer-subscribe">
+                            <div class="d-flex mb-5">
+                                <input type="text" class="form-control rounded-0" placeholder="E-mail">
+                                <input type="submit" class="btn btn-primary rounded-0" value="Enviar">
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+
+                <div class="row pt-5 mt-5 text-center">
+                    <div class="col-md-12">
+                        <div class="border-top pt-5">
+                            <p>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                Copyright &copy;
+                                <script>document.write(new Date().getFullYear());</script> Todos os Direitos Reservados
+                                a | PhotoFlash <i class="icon-heart" aria-hidden="true"></i> by <a
+                                    href="https://colorlib.com" target="_blank">PhotoFlash</a>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+
+    </div> <!-- .site-wrap -->
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/bootstrap-datepicker.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+ // Conecta ao db
+ $s1 = MD5($_POST['senha']);
+$s2 = MD5($_POST['senha2']);
+if ($s1 === $s2) {
+ cadastrar();
+}else {
+ echo"<script language='javascript' type='text/javascript'>alert('Senhas não são iguais');window.location.href='index-cadastrar.html';</script>";
+}
+ // Verifica se conectou ao db
+ if ($mysqli->connect_errno) {
+     printf("Connect failed: %s\n", $mysqli->connect_error);
+     exit();
+ }
+ // Verifica se o login ja existe
+ //$sqlver = "SELECT login FROM usuario WHERE login = '$login'";
+ //$resultver = mysqli_query($mysqli,$sqlver);
+
+ //if (mysqli_num_rows($resultver) > 0) {
+   echo"<script language='javascript' type='text/javascript'>alert('Usuario já existe');window.location.href='index-cadastrar.html';</script>";
+
+ //} else {
+   // INSERT no db cadastro
+   $sql = "INSERT INTO usuario (cpf,nome,email,login,senha,endereco,cep) VALUES ('$cpf','$nome','$email','$login','$senha','$endereco','$cep')";
+
+   if ($mysqli->query($sql) === TRUE) {
+     echo"<script language='javascript' type='text/javascript'>alert('Usuário cadastrado com sucesso!');window.location.href='.html'</script>";
+
+   } else {
+       echo "Error: " . $sql . "<br>" . $mysqli->error;
+   }
+ //}
+
+ mysqli_close($mysqli);
